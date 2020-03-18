@@ -2,6 +2,6 @@
 <h1>Blog Home Page</h1>
 {% for post in posts %}
 <h1>{{post.title}}</h1>
-<p>{{post.author}} on {{post.date_posted}}</p>
+<p>{{post.author}} on {{post.date_posted|date:"F d, Y"}}</p>
 <p>{{post.content}}</p>
 {% endfor %} {% endblock content %}
