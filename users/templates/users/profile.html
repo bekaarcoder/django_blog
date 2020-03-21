@@ -1,7 +1,29 @@
 {% extends 'blog/base.html' %} {% block content %}
 <div class="row mt-3">
   <div class="col-md-12">
-    <h3 class="display-4">Welcome {{ user.username }}!</h3>
+    <h3 class="display-4">Welcome {{ user.username|title }}!</h3>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div
+          class="d-block rounded-circle mx-auto"
+          style="width: 200px; height:auto; border: 2px solid #CCC; overflow: hidden;"
+        >
+          <img
+            src="{{user.profile.image.url}}"
+            alt="profile"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="lead">{{user.username|title}}</div>
+            <div class="text-muted">{{user.email}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock content %}
